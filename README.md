@@ -1,83 +1,37 @@
-# App
-
-Behold My Awesome Project!
+# Animated Octo Eureka
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-License: MIT
+Powered by [Cookiecutter Django](https://github.com/cookiecutter/cookiecutter-django), Animated Octo Eureka is a boilerplate for jumpstarting
+production-ready Django projects quickly.
 
-## Settings
+-   Documentation: <https://cookiecutter-django.readthedocs.io/en/latest/>
+-   See [Troubleshooting](https://cookiecutter-django.readthedocs.io/en/latest/troubleshooting.html) for common errors and obstacles
 
-Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
+## Features
 
-## Basic Commands
+-   For Django 4.0
+-   Works with Python 3.10
+-   Renders Django projects with 100% starting test coverage
+-   Twitter [Bootstrap](https://github.com/twbs/bootstrap) v5
+-   [12-Factor](http://12factor.net/) based settings via [django-environ](https://github.com/joke2k/django-environ)
+-   Secure by default. We believe in SSL.
+-   Optimized development and production settings
+-   Registration via [django-allauth](https://github.com/pennersr/django-allauth)
+-   Comes with custom user model with [JWT authentication](https://www.django-rest-framework.org/api-guide/authentication/#json-web-token-authentication) ready to go
+-   Basic ASGI setup for Websockets
+-   Media storage using Amazon S3, Google Cloud Storage or Azure Storage
+-   Docker support using [docker-compose](https://github.com/docker/compose) for development and production (using [Traefik](https://traefik.io/) with [LetsEncrypt](https://letsencrypt.org/) support)
+-   Run tests with unittest or pytest
+-   Runs PostgreSQL 14.1
+-   Default integration with [pre-commit](https://github.com/pre-commit/pre-commit) for identifying simple issues before submission to code review
+-   Configuration for [Celery](https://docs.celeryq.dev) and [Flower](https://github.com/mher/flower) (the latter in Docker setup only)
+-   Integration with [MailHog](https://github.com/mailhog/MailHog) for local email testing
+-   Integration with [Sentry](https://sentry.io/welcome/) for error logging
 
-### Setting Up Your Users
+## Usage
+For local development, see the following:
 
--   To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
-
--   To create a **superuser account**, use this command:
-
-        $ python manage.py createsuperuser
-
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
-
-### Type checks
-
-Running type checks with mypy:
-
-    $ mypy app
-
-### Test coverage
-
-To run the tests, check your test coverage, and generate an HTML coverage report:
-
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
-
-#### Running tests with pytest
-
-    $ pytest
-
-### Live reloading and Sass CSS compilation
-
-Moved to [Live reloading and SASS compilation](https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#sass-compilation-live-reloading).
-
-### Celery
-
-This app comes with Celery.
-
-To run a celery worker:
-
-``` bash
-cd app
-celery -A config.celery_app worker -l info
-```
-
-Please note: For Celery's import magic to work, it is important *where* the celery commands are run. If you are in the same folder with *manage.py*, you should be right.
-
-### Email Server
-
-In development, it is often nice to be able to see emails that are being sent from your application. For that reason local SMTP server [MailHog](https://github.com/mailhog/MailHog) with a web interface is available as docker container.
-
-Container mailhog will start automatically when you will run all docker containers.
-Please check [cookiecutter-django Docker documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html) for more details how to start all containers.
-
-With MailHog running, to view messages that are sent by your application, open your browser and go to `http://127.0.0.1:8025`
-
-### Sentry
-
-Sentry is an error logging aggregator service. You can sign up for a free account at <https://sentry.io/signup/?code=cookiecutter> or download and host it yourself.
-The system is set up with reasonable defaults, including 404 logging and integration with the WSGI application.
-
-You must set the DSN url in production.
-
-## Deployment
-
-The following details how to deploy this application.
-
-### Docker
-
-See detailed [cookiecutter-django Docker documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html).
+-   [Developing locally](http://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html)
+-   [Developing locally using docker](http://cookiecutter-django.readthedocs.io/en/latest/developing-locally-docker.html)
